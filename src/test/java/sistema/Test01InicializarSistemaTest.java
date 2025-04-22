@@ -26,19 +26,24 @@ public class Test01InicializarSistemaTest {
         assertEquals(Retorno.Resultado.OK, retorno.getResultado());
     }
 
+    //PREGUNTAR es necesario hacer un assertEquals con el valor string del retorno.
     @Test
     void inicializarSistemaError1() {
         retorno = s.inicializarSistema(4);
         assertEquals(Retorno.Resultado.ERROR_1, retorno.getResultado());
+        assertEquals("La cantidad de ciudades a ingresar es 5 o superior.", retorno.getValorString()); //ESTO
 
         retorno = s.inicializarSistema(2);
         assertEquals(Retorno.Resultado.ERROR_1, retorno.getResultado());
+        assertEquals("La cantidad de ciudades a ingresar es 5 o superior.", retorno.getValorString());
 
         retorno = s.inicializarSistema(-1);
         assertEquals(Retorno.Resultado.ERROR_1, retorno.getResultado());
+        assertEquals("La cantidad de ciudades a ingresar es 5 o superior.", retorno.getValorString());
 
         retorno = s.inicializarSistema(0);
         assertEquals(Retorno.Resultado.ERROR_1, retorno.getResultado());
+        assertEquals("La cantidad de ciudades a ingresar es 5 o superior.", retorno.getValorString());
     }
 
 

@@ -21,6 +21,8 @@ public class Test02RegistrarViajero {
     void registrarViajeroOk() {
         retorno = s.registrarViajero("1.914.689-5", "Guillermo", "guille@ort.edu.uy", 35, Categoria.ESTANDAR);
         assertEquals(Retorno.Resultado.OK, retorno.getResultado());
+
+        //LLAMAR A LISTADO DE VIAJEROS, verifica que se agrego correctamente
     }
 
     @Test
